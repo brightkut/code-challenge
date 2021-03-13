@@ -1,5 +1,5 @@
-### Code Challenge 
----
+# Code Challenge 
+
 This project is wrote for practice algorithm about programming skill
 
 #### Reference
