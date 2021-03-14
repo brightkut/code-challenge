@@ -28,14 +28,14 @@ public class Main {
             return romanMap.get(s.charAt(0));
         }
 
+        // last value only plus
         int sum = romanMap.get(s.charAt(s.length()-1));
 
         for(int i =0;i<s.length()-1;i++){
          int value1 = romanMap.get(s.charAt(i));
          int value2 = romanMap.get(s.charAt(i+1));
 
-         if(value1>=value2)sum+=value1;
-         else sum-=value1 ;
+         sum = (value1>=value2) ? sum + value1 : sum - value1;
         }
 
         return sum;
