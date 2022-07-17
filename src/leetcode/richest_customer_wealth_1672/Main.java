@@ -1,4 +1,4 @@
-package richest_customer_wealth_1672;
+package leetcode.richest_customer_wealth_1672;
 
 public class Main {
     public static void main(String[] args) {
