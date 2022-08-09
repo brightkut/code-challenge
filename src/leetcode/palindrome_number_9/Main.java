@@ -17,7 +17,6 @@ public class Main {
             return false;
         }
 
-
         int reverseNumber = 0;
         int startNumber = x;
 
