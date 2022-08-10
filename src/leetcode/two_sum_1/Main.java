@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         int [] input = {2,7,11,15};
         System.out.println(Arrays.toString(twoSum(input, 9)));
+        System.out.println(Arrays.toString(twoSums(input,9)));
     }
 
     public static int[] twoSum(int[] nums, int target) {
@@ -26,6 +27,35 @@ public class Main {
 
             c.put(value,i);
         }
+        return null;
+    }
+
+    // not working because we sort
+    public static int [] twoSums(int[]nums, int target){
+        int l =0;
+        int r = nums.length-1;
+
+        //sort
+        Arrays.sort(nums);
+
+        while (l<r){
+            int f = nums[l];
+            int s = nums[r];
+            int sum = f+s;
+
+            if(sum< target){
+                l+=1;
+            }else if(sum>target){
+                r-=1;
+            }else{
+                int [] res = new int[2];
+                res[0] = l;
+                res[1] = r;
+
+                return res;
+            }
+        }
+
         return null;
     }
 }
