@@ -24,7 +24,8 @@ public class Main {
         int c2 = 0;
         for(int j=0; j<s.length();j++){
             if(isLetter(res[j])) {
-                res[j] = reverseAlpha.get(c2);
+                res[j] = reverseAlpha.get(c2)
+                ;
                 c2++;
             }
         }
