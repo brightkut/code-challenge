@@ -29,7 +29,7 @@ public class Main {
          int min = 0;
 
          for (int i =0 ; i< prices.length ; i++){
-             if(max >  prices[i]) max = prices[i];
+             if(prices[i]<max) max = prices[i];
 
              int profit = prices[i] - max;
 
