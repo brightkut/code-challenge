@@ -45,4 +45,23 @@ public class Main {
 
         return maxProfit+profit;
     }
+
+    //Dynamic Programming
+    public int maxProfit2(int[] prices) {
+        //[7,1,5,3,6,4]
+        //[1,2,3,4]
+        int buyingDate = 0, sellingDate = 0, profit = 0;
+        for(int i = 1; i < prices.length;i++){
+            //sell
+            if(prices[i] >= prices[i-1]){
+                sellingDate++;
+            }else{
+                //cheaper buy
+                profit += prices[sellingDate] -  prices[buyingDate];
+                buyingDate = sellingDate = i;
+            }
+        }
+        profit += prices[sellingDate] -  prices[buyingDate];
+        return profit;
+    }
 }
