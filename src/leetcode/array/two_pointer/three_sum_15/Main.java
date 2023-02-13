@@ -1,5 +1,5 @@
 
-package leetcode.array.three_sum_15;
+package leetcode.array.two_pointer.three_sum_15;
 
 import java.util.ArrayList;
 import java.util.Arrays;
