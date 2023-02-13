@@ -1,4 +1,4 @@
-package leetcode.array.two_pointer.two_sum_array_sort_167;
+package leetcode.two_pointer.two_sum_array_sort_167;
 
 import java.util.Arrays;
 

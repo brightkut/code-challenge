@@ -13,4 +13,4 @@ This project consist of programing problem from different source that I already 
 
 [Learning Technique](https://designgurus.org/blog/dont-just-leetcode)
 
-[Problem with Categorize](https://github.com/berknology/leetcode-classifier#two-pointers)
+[Classification of Leetcode Problems](https://github.com/berknology/leetcode-classifier#two-pointers)

@@ -1,4 +1,4 @@
-package leetcode.array.two_pointer.sum_of_square_number_633;
+package leetcode.two_pointer.sum_of_square_number_633;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,8 +1,15 @@
-package leetcode.string.valid_palindrome_125;
+package leetcode.two_pointer.valid_palindrome_125;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(isPalindrome(".;"));
+
+        System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
+        System.out.println(isPalindrome("race a car"));
+        System.out.println(isPalindrome(" "));
+
+        System.out.println(isPalindrome3("A man, a plan, a canal: Panama"));
+        System.out.println(isPalindrome3("race a car"));
+        System.out.println(isPalindrome3(" "));
     }
 
     public static boolean isPalindrome(String s) {
@@ -44,6 +51,28 @@ public class Main {
                 if(f!=f2) return false;
             }
         }
+        return true;
+    }
+
+    //Two Pointer
+    public static boolean isPalindrome3(String s){
+
+        String s2 = "";
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if(Character.isLetter(c) || Character.isDigit(c)) s2+=String.valueOf(c).toLowerCase();
+        }
+
+        int left = 0, right =  s2.length()-1;
+
+        while (left<= right){
+            if (s2.charAt(left) != s2.charAt(right)){
+                return false;
+            }
+            left++;
+            right--;
+        }
+
         return true;
     }
 }

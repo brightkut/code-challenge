@@ -1,4 +1,4 @@
-package leetcode.array.two_pointer.reverse_vowels_of_a_string_345;
+package leetcode.two_pointer.reverse_vowels_of_a_string_345;
 
 import java.util.HashMap;
 

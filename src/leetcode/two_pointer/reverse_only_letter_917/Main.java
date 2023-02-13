@@ -1,4 +1,4 @@
-package leetcode.string.reverse_only_letter_917;
+package leetcode.two_pointer.reverse_only_letter_917;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         String input= "a-bC-dEf-ghIj";
         System.out.println(reverseOnlyLetters(input));
+        System.out.println(reverseOnlyLetters2(input));
     }
 
     public static String reverseOnlyLetters(String s) {
@@ -36,6 +37,33 @@ public class Main {
         }
 
         return r.toString();
+    }
+
+    //Two pointer
+    public static String reverseOnlyLetters2(String s) {
+        char []c = s.toCharArray();
+        int left =0, right = c.length-1;
+
+        while (left < right){
+            if(isLetter(c[left]) && isLetter(c[right])){
+                //swap
+                char temp = c[left];
+                c[left] = c[right];
+                c[right] = temp;
+
+                left++;
+                right--;
+            }else if(isLetter(c[left])){
+                right--;
+            }else if (isLetter(c[right])){
+                left++;
+            }else {
+                left++;
+                right--;
+            }
+        }
+
+        return String.copyValueOf(c);
     }
 
     private static boolean isLetter(int c){

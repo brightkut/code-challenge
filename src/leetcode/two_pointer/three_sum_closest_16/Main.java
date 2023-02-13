@@ -1,4 +1,4 @@
-package leetcode.array.two_pointer.three_sum_closest_16;
+package leetcode.two_pointer.three_sum_closest_16;
 
 import java.util.Arrays;
 
