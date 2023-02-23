@@ -66,4 +66,35 @@ public class Main {
         return null;
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public final TreeNode getTargetCopy3(final TreeNode original, final TreeNode cloned, final TreeNode target) {
+        return dfs(original,cloned,target);
+    }
+
+    public TreeNode dfs(final TreeNode original, final TreeNode cloned, final TreeNode target){
+        if(original == target) return cloned;
+        if(original == null || cloned == null) return null;
+
+        TreeNode left = dfs(original.left,cloned.left,target);
+        TreeNode right = dfs(original.right,cloned.right,target);
+
+        if(left !=null) return left;
+        if(right!= null) return right;
+
+        return null;
+    }
 }

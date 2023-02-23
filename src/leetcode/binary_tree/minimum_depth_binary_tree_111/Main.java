@@ -45,4 +45,32 @@ public class Main {
 
         return depth;
     }
+
+    public int minDepth2(TreeNode root) {
+        if(root == null) return 0;
+        int dept = 1;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int count = 1;
+        while (!queue.isEmpty()){
+            int size = 0;
+            for(int i= 0 ; i < count ; i++){
+                TreeNode q = queue.poll();
+                if(q.left == null && q.right == null) return dept;
+                if(q.left != null){
+                    queue.add(q.left);
+                    size++;
+                }
+                if(q.right != null){
+                    queue.add(q.right);
+                    size++;
+                }
+            }
+            dept++;
+            count= size;
+        }
+
+        return dept;
+    }
 }

@@ -1,4 +1,4 @@
-package leetcode.array.merge_sort_array_88;
+package leetcode.two_pointer.merge_sort_array_88;
 
 import java.util.Arrays;
 
@@ -24,4 +24,5 @@ public class Main {
 
         Arrays.sort(nums1);
     }
+
 }

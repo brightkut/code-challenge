@@ -1,14 +1,16 @@
 package leetcode.array.intersect_two_arrray_350;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-    int[]  nums1 = {2,1};
-    int [] nums2 = {1,1};
-    System.out.println(intersect(nums1,nums2));
+    int[]  nums1 = {1,2,2,1};
+    int [] nums2 = {2,2};
+//    System.out.println(intersect(nums1,nums2));
+    System.out.println(intersect2(nums1,nums2));
     }
 
     public static int[] intersect(int[] nums1, int[] nums2) {
@@ -39,5 +41,42 @@ public class Main {
         }
 
         return r;
+    }
+    public static  int[] intersect2(int[] nums1, int[] nums2) {
+        int [] n = nums2;
+        int [] n2 = nums1;
+
+        if (nums1.length < nums2.length) {
+            n =  nums1;
+            n2 = nums2;
+        }
+
+        Arrays.sort(n);
+        Arrays.sort(n2);
+
+
+        List<Integer>res = new ArrayList<>();
+
+        int l = n2.length-1;
+        int r = n.length -1;
+
+
+        while( r >=0 ){
+            if(l < 0 ){
+                break;
+            }
+            if(n[r]==n2[l]){
+                res.add(n[r]);
+                r--;
+                l--;
+            }
+        }
+
+        int [] res2 = new int [res.size()];
+        for(int j =0 ; j< res.size() ; j++){
+            res2[j] = res.get(j);
+        }
+
+        return res2;
     }
 }
