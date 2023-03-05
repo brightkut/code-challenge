@@ -53,8 +53,6 @@ public class Main {
 
         Arrays.sort(n);
         Arrays.sort(n2);
-
-
         List<Integer>res = new ArrayList<>();
 
         int l = n2.length-1;
