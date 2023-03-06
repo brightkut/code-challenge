@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args) {
         int [] input = {7,1,5,3,6,4};
 
-        System.out.println(maxProfit(input));
+//        System.out.println(maxProfit(input));
+        System.out.println(maxProfit3(input));
      }
 
      //O(n) do by myself
@@ -63,5 +64,20 @@ public class Main {
         }
         profit += prices[sellingDate] -  prices[buyingDate];
         return profit;
+    }
+
+    public static int maxProfit3(int[] prices) {
+        if(prices == null || prices.length <=1) return 0;
+
+        int maxProfit = 0 ;
+        for(int i = 1; i < prices.length ; i++){
+            if(prices[i-1] < prices[i]){
+                System.out.println("prev: "+prices[i-1]);
+                System.out.println("next: "+prices[i]);
+                maxProfit+= prices[i] - prices[i-1] ;
+            }
+        }
+
+        return maxProfit;
     }
 }
