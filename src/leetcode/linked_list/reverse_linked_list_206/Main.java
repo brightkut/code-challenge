@@ -24,4 +24,19 @@ public class Main {
 
         return l;
     }
+
+    public static ListNode reverseList2(ListNode head) {
+        if(head == null || head.next == null) return head;
+        ListNode h = null;
+        ListNode s = head;
+
+        while (s != null){
+            ListNode temp = s.next;
+            s.next = h;
+            h = s;
+            s = temp;
+        }
+
+        return h;
+    }
 }
