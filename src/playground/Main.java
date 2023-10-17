@@ -5,20 +5,28 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class Main {
     public static void main(String[] args) {
-//        int [] n= {-2,1,-3,4,-1,2,1,-5,4};
-//
-//        Deque<String> deque = new ArrayDeque<>();
-//        deque.add("a");
-//        deque.add("b");
-//        deque.add("c");
-//        System.out.println(deque);
-//        System.out.println(deque.removeLast());
-//        System.out.println(deque);
+        System.out.println(getRow(0));
+        System.out.println(getRow(1));
+        System.out.println(getRow(2));
+    }
 
-//        var whatIsIt string secret := "CYtZBsWZaZliYZocWLZlXuZZYWYeYXZsXeZXtXWpXeRYYYd!ZnYeWXoYXasnX,WXWrWPoAdWesnciGenWr"
-//        StringBuilder stringBuilder = new StringBuilder();
-        //XnsaXYoXWeYnZ!dYYYReXpWXtXZeXsZXYeYWYZZuXlZLWcoZYilZaZWsBZtYC,rWneGicnseWdAoPWrWXW rever
+    public static List<Integer> getRow(int rowIndex) {
+        List<Integer> res= new ArrayList<>();
 
+        for(int i = 0; i < rowIndex+1; i++){
+            List<Integer> res2 = new ArrayList<>();
+            for(int j = 0; j < i+1; j++){
+                if(j==0 || j== i){
+                    res2.add(1);
+                }else{
+                    res2.add(res.get(j-1)+res.get(j));
+                }
+            }
+
+            res = res2;
+        }
+
+        return res;
     }
 
     public static String decodeBase64(String s){
