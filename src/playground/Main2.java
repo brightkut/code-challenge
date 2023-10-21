@@ -1,5 +1,6 @@
 package playground;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,7 +8,8 @@ public class Main2 {
     public static void main(String[] args) {
 //        int [] i = {3, 8, 2, 3, 3, 2,4,4,4,4};
 
-        int [] i = {5, 5, 5, 5, 5};
+//        int [] i = {5, 5, 5, 5, 5};
+        int i = Integer.MAX_VALUE;
         System.out.println(solution(i));
 
         int N = 6;
@@ -52,12 +54,8 @@ public class Main2 {
     }
 
     public static String getA(int n){
-        String res ="";
-
-        for(int i = 0; i <n ; i++){
-            res+="a";
-        }
-
-        return res;
+        char[] aArray = new char[n];
+        Arrays.fill(aArray, 'a');
+        return new String(aArray);
     }
 }
