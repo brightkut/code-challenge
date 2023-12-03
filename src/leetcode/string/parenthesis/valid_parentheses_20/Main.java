@@ -1,4 +1,4 @@
-package leetcode.string.valid_parentheses_20;
+package leetcode.string.parenthesis.valid_parentheses_20;
 
 import java.util.HashMap;
 import java.util.Map;
