@@ -1,13 +1,15 @@
-package leetcode.two_pointer.sum_of_square_number_633;
+package leetcode.two_pointer.two_sum_problem.sum_of_square_number_633;
 
 public class Main {
     public static void main(String[] args) {
 //        System.out.println(judgeSquareSum(5));
 //        System.out.println(judgeSquareSum(3));
 //        System.out.println(judgeSquareSum(4));
-        System.out.println(judgeSquareSum2(5));
-        System.out.println(judgeSquareSum2(3));
-        System.out.println(judgeSquareSum2(4));
+//        System.out.println(judgeSquareSum2(5));
+//        System.out.println(judgeSquareSum2(3));
+//        System.out.println(judgeSquareSum2(4));
+        long l = (long) Math.sqrt(7);
+        System.out.println(l);
     }
 
     public static boolean judgeSquareSum(int c) {
@@ -48,6 +50,21 @@ public class Main {
             } else if (cur > c) {
                 right--;
             } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean judgeSquareSum3(int c) {
+        int l = 0, r = (int) Math.sqrt(c);
+        while(l<=r){
+            int cur = l * l + r * r;
+            if(cur > c){
+                r--;
+            }else if (cur < c){
+                l++;
+            }else {
                 return true;
             }
         }
