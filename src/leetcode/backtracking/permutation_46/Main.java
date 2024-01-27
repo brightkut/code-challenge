@@ -1,6 +1,7 @@
 package leetcode.backtracking.permutation_46;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
@@ -9,8 +10,18 @@ public class Main {
 
         int[] input = {1,2,3};
 
-        System.out.println(permute(input));
+//        int [] s = Arrays.copyOfRange(input,1, input.length);
+//        int [] s2 = Arrays.copyOfRange(input,1, input.length-1);
+//        printArray(s);
+//        System.out.println();
+//        printArray(s2);
 
+        System.out.println(permutation2(input));
+
+    }
+
+    public static void printArray(int[] n){
+        for(int i =0 ; i< n.length ; i++) System.out.print(n[i]+ " ");
     }
 
     //Backtracking
@@ -55,5 +66,34 @@ public class Main {
             }
         }
 
+    }
+
+    public static List<List<Integer>> permutation2(int[] nums){
+        if(nums.length == 0 ){
+            List<Integer> l = new ArrayList<>();
+            List<List<Integer>> res = new ArrayList<>();
+            res.add(l);
+            return res;
+        }
+
+        int firtElement = nums[0];
+        int[] restElement = Arrays.copyOfRange(nums,1,nums.length);
+
+        List<List<Integer>> permutationWithoutFirstElement = permute(restElement);
+        List<List<Integer>> res = new ArrayList<>();
+
+        for(int i = 0 ;  i < permutationWithoutFirstElement.size() ; i++){
+            List<Integer> perm = permutationWithoutFirstElement.get(i);
+
+            for(int j = 0 ; j <=  perm.size(); j++){
+                List<Integer> r = new ArrayList<>();
+                r.addAll(perm.subList(0,j));
+                r.add(firtElement);
+                r.addAll(perm.subList(j,perm.size()));
+                res.add(r);
+            }
+        }
+
+        return res;
     }
 }
