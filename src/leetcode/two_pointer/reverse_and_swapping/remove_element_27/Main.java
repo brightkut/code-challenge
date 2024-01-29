@@ -1,4 +1,4 @@
-package leetcode.array.remove_element_27;
+package leetcode.two_pointer.reverse_and_swapping.remove_element_27;
 
 import java.util.Arrays;
 

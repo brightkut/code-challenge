@@ -1,11 +1,15 @@
-package leetcode.two_pointer.reverse_vowels_of_a_string_345;
+package leetcode.two_pointer.reverse_and_swapping.reverse_vowels_of_a_string_345;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println(reverseVowels("hello"));
         System.out.println(reverseVowels("leetcode"));
+        System.out.println(reverseVowels2("hello"));
+        System.out.println(reverseVowels2("leetcode"));
     }
 
     public static String reverseVowels(String s) {
@@ -50,4 +54,39 @@ public class Main {
         return res2;
     }
 
+    public static String reverseVowels2(String s) {
+        HashSet<Character> h = new HashSet<>();
+        h.add('a');
+        h.add('e');
+        h.add('i');
+        h.add('o');
+        h.add('u');
+
+        int l = 0 , r = s.length() - 1;
+
+        char[] res = s.toCharArray();
+
+        while (l < r){
+            char cl = Character.toLowerCase(s.charAt(l));
+            char cr = Character.toLowerCase(s.charAt(r));
+
+            if(h.contains(cl) && h.contains(cr)){
+                char temp = s.charAt(l);
+                res[l] = s.charAt(r);
+                res[r] = temp;
+                l++;
+                r--;
+            }else if(h.contains(cl)){
+                r--;
+            }else {
+                l++;
+            }
+        }
+
+        String res2 = "";
+        for(char c : res){
+            res2+=c;
+        }
+        return res2;
+    }
 }

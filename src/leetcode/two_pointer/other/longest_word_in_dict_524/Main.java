@@ -1,6 +1,4 @@
-package leetcode.two_pointer.longest_word_in_dict_524;
-
-import java.util.List;
+package leetcode.two_pointer.other.longest_word_in_dict_524;
 
 public class Main {
     public static void main(String[] args) {

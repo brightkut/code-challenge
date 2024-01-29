@@ -1,4 +1,4 @@
-package leetcode.two_pointer.reverse_only_letter_917;
+package leetcode.two_pointer.reverse_and_swapping.reverse_only_letter_917;
 
 import java.util.ArrayList;
 import java.util.List;

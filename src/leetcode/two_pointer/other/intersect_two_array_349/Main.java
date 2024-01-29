@@ -1,4 +1,4 @@
-package leetcode.two_pointer.intersect_two_array_349;
+package leetcode.two_pointer.other.intersect_two_array_349;
 
 import java.util.*;
 
