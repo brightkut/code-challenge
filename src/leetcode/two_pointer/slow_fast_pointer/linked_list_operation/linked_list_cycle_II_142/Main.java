@@ -1,4 +1,4 @@
-package leetcode.two_pointer.other.linked_list_cycle_II_142;
+package leetcode.two_pointer.slow_fast_pointer.linked_list_operation.linked_list_cycle_II_142;
 
 import leetcode.common.ListNode;
 

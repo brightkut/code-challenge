@@ -1,4 +1,4 @@
-package leetcode.linked_list.linked_list_cycle_141;
+package leetcode.two_pointer.slow_fast_pointer.linked_list_operation.linked_list_cycle_141;
 
 import leetcode.common.ListNode;
 
@@ -39,6 +39,23 @@ public class Main {
             if(s==f){
                 return true;
             }
+        }
+
+        return false;
+    }
+
+    public boolean hasCycle3(ListNode head) {
+        if(head == null || head.next == null) return false;
+
+        ListNode h = head;
+
+        while (head != null){
+            ListNode s = h.next;
+            ListNode f = h.next.next;
+
+            if(s==f) return true;
+
+            h = s;
         }
 
         return false;

@@ -5,9 +5,9 @@ public class Main {
         //2
         System.out.println(minimumTimeToInitialState("abacaba",3));
         //1
-        System.out.println(minimumTimeToInitialState("abacaba",4));
-        //4
-        System.out.println(minimumTimeToInitialState("abcbabcd",2));
+//        System.out.println(minimumTimeToInitialState("abacaba",4));
+//        //4
+//        System.out.println(minimumTimeToInitialState("abcbabcd",2));
     }
 
     public static int minimumTimeToInitialState(String word, int k) {
@@ -15,11 +15,13 @@ public class Main {
 
 
         String suffix = word.substring(k);
+        System.out.println(suffix);
 
         while (true){
             c++;
             int len = suffix.length();
             String prefix = word.substring(0,len);
+            System.out.println(prefix);
 
             if(prefix.equals(suffix)) return c;
 
